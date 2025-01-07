@@ -1,0 +1,12 @@
+module.exports = {
+  semi: true,
+  trailingComma: "all",
+  singleQuote: true,
+  tabWidth: 2,
+  jsxSingleQuote: false,
+  endOfLine: "lf",
+  printWidth: 100,
+  bracketSpacing: true,
+  bracketSameLine: false,
+  plugins: [],
+};

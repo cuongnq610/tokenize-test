@@ -1,0 +1,86 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "plugin:react/jsx-runtime",
+    "simple-import-sort"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "react/jsx-one-expression-per-line": 0,
+        "no-plusplus": "off",
+        "no-bitwise": "off",
+        "no-continue": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }
+        ],
+        "no-irregular-whitespace": "off",
+        "no-underscore-dangle": "off",
+        "arrow-body-style": "off",
+        "no-console": "warn",
+        "no-restricted-syntax": [
+          "error",
+          { "selector": "TSEnumDeclaration", "message": "Don't declare enums" }
+        ],
+        "@typescript-eslint/no-extraneous-class": "off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "import/no-duplicates": "error",
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Next/React library import
+              ["^react$", "^react.*", "^next.*"],
+
+              // Common components
+              ["^@/components/.*"],
+
+              // Common services
+              ["^@/services/.*"],
+
+              // Common constants
+              ["^@/constants/.*"],
+
+              // Common types
+              ["^@/types/.*"],
+
+              // // Anything not matched in another group.
+              ["^"],
+              // Relative imports from same folder "./"
+              ["^\\./"],
+              // Side effect import such as global style
+              ["^\\u0000"],
+              // Style module imports always come last, this helps to avoid CSS order issues
+              ["^.+\\.(module.css|module.scss)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
