@@ -1,18 +1,11 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import { TradingView } from "./features/trading-view";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const test = () => {
-    setCount(count + 1);
-  };
-
-  useEffect(() => {
-    test();
-  }, []);
-
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <TradingView />
+    </div>
+  );
 }
 
 export default App;

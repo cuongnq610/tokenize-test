@@ -1,0 +1,80 @@
+.time-label-container {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.time-label {
+  color: #848e9c;
+}
+
+.time-item {
+  cursor: pointer;
+  color: #848e9c;
+  transition: 0.3s;
+  &:hover,
+  &__active {
+    color: #eaecef;
+  }
+}
+
+.time-settings {
+  position: relative;
+  z-index: 20;
+  &__section {
+    // position: absolute;
+    position: fixed;
+    background-color: #1e2329;
+    font-size: 14px;
+    padding: 12px;
+    padding-top: 20px;
+    border-radius: 6px;
+    width: 300px;
+    box-shadow: var(--box-shadow);
+
+    &-edit-button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      color: #fcd535;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    &-label {
+      text-align: left;
+      line-height: 24px;
+      font-size: 12px;
+    }
+
+    &-devide {
+      height: 12px;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+}
+
+.setting-control-item {
+  padding: 1px 0;
+  width: calc(25% - 12px);
+  border-radius: 4px;
+  background-color: #2b3139;
+  cursor: pointer;
+  position: relative;
+  &.active {
+    background-color: #5e6673;
+  }
+
+  .top-right {
+    position: absolute;
+    top: -10px;
+    right: -4px;
+  }
+}
