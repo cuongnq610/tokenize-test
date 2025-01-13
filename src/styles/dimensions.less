@@ -1,46 +1,39 @@
-.w-1 {
-  width: 0.25rem;
-}
+// generate classes for width, min-width, max-width property from w-1 to w-100 with step is @width_step
+@width_step: 0.25rem;
+@width_range: range(100);
+each(@width_range, {
+    .w-@{value} {
+       width: (@value * @width_step);
+    }
 
-.w-2 {
-  width: 0.5rem;
-}
+    .min-w-@{value} {
+      min-width: (@value * @width_step);
+    }
 
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-4 {
-  width: 1rem;
-}
-
+    .max-w-@{value} {
+      max-width: (@value * @width_step);
+    }
+})
 .w-full {
   width: 100%;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
+// generate classes for height, min-height, max-height property from w-1 to w-100 with step is @width_step
+@height_step: 0.25rem;
+@height_range: range(100);
+each(@height_range, {
+    .w-@{value} {
+       width: (@value * @height_step);
+    }
 
-.h-2 {
-  height: 0.5rem;
-}
+    .min-h-@{value} {
+      min-height: (@value * @height_step);
+    }
 
-.h-3 {
-  height: 0.75rem;
-}
-
-.h-4 {
-  height: 1rem;
-}
-
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
+    .max-h-@{value} {
+      max-height: (@value * @height_step);
+    }
+})
 
 .h-full {
   height: 100%;
